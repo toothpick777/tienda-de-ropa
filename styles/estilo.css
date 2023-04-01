@@ -1,0 +1,66 @@
+/* Estilos generales */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--lg: 32px;
+	--md: 20px;
+	--sm: 16px;
+	--light-red: #DC0000;
+	--dark-red: #850000;
+	--sand: #FFDB89;
+	--white-sand: #FFF6C3;
+	/* paleta de colores: https://colorhunt.co/palette/dc0000850000ffdb89fff6c3 */
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	background: rgba(255, 219, 137, 0.2);
+	width: 92%;
+	margin: 0 auto;
+}
+
+/* header */
+
+header {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	background: var(--light-red);
+	height: 120px;
+	place-content: center;
+	border-end-end-radius: 12px;
+	border-end-start-radius: 12px;
+
+}
+
+/*header ul {
+	bottom: 0;
+}
+*/
+
+header ul li{
+	display: inline;
+	margin-right: 8px;
+	list-style: none;
+
+}
+
+header ul li a {
+	font-size: var(--md);
+	text-decoration: none;
+}
+
+/* slider */
+
+#slider {
+	width: 88%;
+	height: 360px;
+	background: var(--white-sand);
+	margin: 12px auto 12px;
+
+
+}
