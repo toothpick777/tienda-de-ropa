@@ -103,6 +103,38 @@ figure.slider__imagenes img {
 	margin: 12px 0 20px 16px;
   }
 
+  .seleccion_de_producto {
+	display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 320px;
+    flex-wrap: wrap;
+    margin: 16px auto;
+  }
+
+  .seleccion_de_producto li {
+	width: 100%;
+	height: 80px;
+	margin-bottom: 8px;
+	list-style: none;
+	border-radius: 12px;
+	background: linear-gradient(90deg, rgba(242,8,8,0.865983893557423) 0%, rgba(133,0,0,0.8855917366946778) 35%, rgba(255,219,137,0.9108018207282913) 100%);
+  }
+
+  .seleccion_de_producto img {
+	margin-left: 12%;
+	
+  }
+
+  .seleccion_de_producto p,
+  .seleccion_de_producto a{
+	display: inline;
+	font-size: var(--md);
+	text-decoration: none;
+	color: #000;
+	font-weight: 900;
+  }
+
 .cards-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 240px);
