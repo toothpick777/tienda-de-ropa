@@ -11,9 +11,9 @@ html {
 }
 
 :root {
-	--lg: 32px;
-	--md: 20px;
-	--sm: 16px;
+	--lg: 3rem;
+	--md: 2.6rem;
+	--sm: 1.6rem;
 	--light-red: #DC0000;
 	--dark-red: #850000;
 	--sand: #FFDB89;
@@ -97,6 +97,37 @@ figure.slider__imagenes img {
 	object-fit: cover;
 }
 
+
+/* mision, vision, y valores. */
+
+.presentacion_de_empresa {
+	display: grid;
+	grid-template-columns: repeat(2,minmax(500px,1fr));
+	column-gap: 8px;
+	justify-items: center;
+}
+
+.foto-de-presentacion-de-la-pagina img{
+	width: 340px;
+}
+
+
+.presentacion_de_empresa__informacion h2{
+	font-size: var(--md);
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+.presentacion_de_empresa__informacion p {
+	font-size: var(--sm);
+	margin-bottom: 4px;
+	margin-left: 8px;
+}
+
+.presentacion_de_empresa__informacion p b {
+	font-size: 1.8rem;
+}
+
 /* footer */
 
 footer {
@@ -105,17 +136,87 @@ footer {
 	background-image: url(/assets/fondo_de_footer_reducido.jpg);
 	background-size: cover;
 	background-position: 0 -314px;
-	border-bottom: 1px solid var(--white-sand);
+}
+
+.contenedor {
+	display: flex;
 }
 
 .redes_sociales {
+	margin: 16px 4%;
+}
+
+.redes_sociales h3 {
+	text-align: center;
+	margin-bottom: 4px;
+}
+
+.redes_sociales ul li{
+	display: inline;
+	list-style: none;
+	margin-right: 4px;
+
+}
+
+.redes_sociales ul li img {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+
+}
+
+.opinion {
+	margin: 16px 4%;
+}
+
+.opinion label {
+	display: block;
+	margin-bottom: 4px;
+	font-size: var(--md);
+
+}
+
+.opinion textarea {
+	width: 320px;
+    height: 72px;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.opinion label, .redes_sociales h3 {
+	color:white;
+	text-shadow: 0 0 10px 10px;
+	font-weight: 800;
+}
+
+/* botton de whatssap */
+
+.whatsapp-button {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: #25d366;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+	transition: all 0.3s ease;
 	display: flex;
-
-}
-
-.informacion_de_empresa, .subtitulos {
-	color: white;
-}
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+  }
+  
+  .whatsapp-button img {
+	width: 50%;
+	height: auto;
+  }
+  
+  .whatsapp-button:hover {
+	transform: scale(1.1);
+	background-color: #128c7e;
+  }
+  
 
 
 @media (max-width: 675px) {
