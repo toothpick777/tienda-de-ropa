@@ -8,6 +8,7 @@
 
 html {
 	font-size: 65.2%;
+	scroll-behavior: smooth;
 }
 
 :root {
@@ -75,26 +76,106 @@ header ul li a {
 	display: none;
 }
 
-/* slider */
-
-#slider {
-	width: 88%;
-	height: 360px;
-	background: var(--white-sand);
-	margin: 12px auto 12px;
-
-
+div.menu-mobile {
+	display: none;
 }
 
-/* figure.slider__imagenes {
-	height: 100%;
-	width: 100%;
-} */
+/* slider */
 
-figure.slider__imagenes img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
+#carrusel-caja {
+    -moz-animation: automatizacion 15s infinite linear;
+    -o-animation: automatizacion 15s infinite linear;
+    -webkit-animation: automatizacion 15s infinite linear;
+    animation: automatizacion 15s infinite linear;
+    -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+    height: 500px;
+    width: 300%;
+}
+#carrusel-contenido {
+    margin: 24px auto;
+    overflow: hidden;
+    text-align: left;
+}
+.imagenes{
+    height: 500px;
+    width: 100%;
+}
+.carrusel-elemento {
+    float: left;
+    width: 33.333%;
+}
+@-moz-keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+    30% {
+        margin-left: 0;
+    }
+    35% {
+        margin-left: -100%;
+    }
+    65% {
+        margin-left: -100%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    95% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+@-webkit-keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+    30% {
+        margin-left: 0;
+    }
+    35% {
+        margin-left: -100%;
+    }
+    65% {
+        margin-left: -100%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    95% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+@keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+    30% {
+        margin-left: 0;
+    }
+    35% {
+        margin-left: -100%;
+    }
+    65% {
+        margin-left: -100%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    95% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0;
+    }
 }
 
 /* productos */
@@ -112,23 +193,24 @@ figure.slider__imagenes img {
     margin: 16px auto;
   }
 
-  .seleccion_de_producto li {
+  .seleccion_de_producto li
+   {
+	list-style: none;
 	width: 100%;
 	height: 80px;
 	margin-bottom: 8px;
-	list-style: none;
 	border-radius: 12px;
 	background: linear-gradient(90deg, rgba(242,8,8,0.865983893557423) 0%, rgba(133,0,0,0.8855917366946778) 35%, rgba(255,219,137,0.9108018207282913) 100%);
+
   }
 
   .seleccion_de_producto img {
-	margin-left: 12%;
-	
+	transform: translate(131px,-30px) rotate(9deg);
   }
 
   .seleccion_de_producto p,
   .seleccion_de_producto a{
-	display: inline;
+	display: block;
 	font-size: var(--md);
 	text-decoration: none;
 	color: #000;
@@ -277,7 +359,7 @@ form {
 footer {
 	display: block;
 	margin-top: 12px;
-	background-image: url(/assets/fondo_de_footer_reducido.jpg);
+	background-image: url(/icons/fondo_de_footer_reducido.jpg);
 	background-size: cover;
 	background-position: 0 -314px;
 }
@@ -292,6 +374,7 @@ footer {
 
 .redes_sociales h3 {
 	text-align: center;
+	font-size: var(--md);
 	margin-bottom: 4px;
 }
 
@@ -321,15 +404,16 @@ footer {
 }
 
 .opinion textarea {
-	width: 320px;
-    height: 72px;
+	width: 420px;
+	height: 80px;
     resize: none;
     overflow-y: scroll;
 }
 
 .opinion label, .redes_sociales h3 {
 	color:white;
-	text-shadow: 0 0 10px 10px;
+	padding: 12px;
+	background-color: rgba(0, 0, 0, 0.76);
 	font-weight: 800;
 }
 
@@ -361,16 +445,74 @@ footer {
 	background-color: #128c7e;
   }
   
+@media (max-width: 940px) {
+	header {
+		height: 180px;
+	}
 
+	.presentacion_de_empresa {
+		grid-template-columns: minmax(500px,1fr);
+		grid-template-rows: repeat(2,1fr);
+	}
+
+	.contenedor {
+		flex-direction: column;
+        align-items: center;
+	}
+
+	.redes_sociales ul li img { 
+		width: 80px;
+		height: 80px;
+	}
+
+}
 
 @media (max-width: 675px) {
 	.menu-list {
 		display: none;
 	}
-
 	
 	.menu-img {
 		display: block;	
+	}
+
+	div.show-menu {
+		display: block;
+	}
+
+	menu {
+		position: absolute;
+		background-color: white;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
+	menu {
+		list-style: none;
+	}
+
+	menu li {
+		background-color: var(--sand);
+		border-radius: 4px;
+		width: 200px;
+		height: 100px;
+	}
+
+	menu li a {
+		font-size: var(--lg);
+		color: #000;
+		text-decoration: none;
+		display: block;
+		margin: 25px auto;
+    	text-align: center;
+	}
+
+	.adios-me-voy{
+		display: none;
 	}
 
 	.menu-img img {
