@@ -385,13 +385,6 @@ footer {
 
 }
 
-.redes_sociales ul li img {
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-
-}
-
 .opinion {
 	margin: 16px 4%;
 }
@@ -404,7 +397,7 @@ footer {
 }
 
 .opinion textarea {
-	width: 420px;
+	width:  min(100%,420px);
 	height: 80px;
     resize: none;
     overflow-y: scroll;
@@ -461,13 +454,21 @@ footer {
 	}
 
 	.redes_sociales ul li img { 
-		width: 80px;
-		height: 80px;
+		width: min(48px,80px);
+		height: min(48px,80px);
+		border-radius: 50%;
 	}
 
 }
 
 @media (max-width: 675px) {
+	.logo {
+		flex-direction: column;
+	}
+
+	.logo figcaption {
+		font-size: var(--sm);
+	}
 	.menu-list {
 		display: none;
 	}
@@ -488,7 +489,6 @@ footer {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-evenly;
 	}
 
 	menu {
@@ -498,6 +498,7 @@ footer {
 	menu li {
 		background-color: var(--sand);
 		border-radius: 4px;
+		margin-top: 52px;
 		width: 200px;
 		height: 100px;
 	}
@@ -520,6 +521,15 @@ footer {
 		height: 8rem;
 		position: absolute;
 		right: 0;
+		margin: 5% auto;
+	}
+
+	#carrusel-caja {
+		height: 20vh;
+	}
+
+	.imagenes {
+		height: 20vh;
 	}
 
 }
