@@ -268,8 +268,14 @@ div.menu-mobile {
 	justify-items: center;
 }
 
+.foto-de-presentacion-de-la-pagina {
+	display: contents;
+}
+
 .foto-de-presentacion-de-la-pagina img{
-	width: 340px;
+	width: min(100%,340px);
+	place-items: center;
+    height: 100%;
 }
 
 
@@ -444,8 +450,9 @@ footer {
 	}
 
 	.presentacion_de_empresa {
-		grid-template-columns: minmax(min(100%,500px),1fr);
-		grid-template-rows: repeat(2,1fr);
+		grid-template-columns: minmax(min(100%,500px),100%);
+        grid-template-rows: repeat(2,minmax(min(100vh,600px),1fr));
+        gap: 4px;
 	}
 
 	.contenedor {
@@ -464,6 +471,7 @@ footer {
 @media (max-width: 675px) {
 	.logo {
 		flex-direction: column;
+		margin-top: 12px;
 	}
 
 	.logo figcaption {
@@ -525,11 +533,11 @@ footer {
 	}
 
 	#carrusel-caja {
-		height: 20vh;
+		height: 32vh;
 	}
 
 	.imagenes {
-		height: 20vh;
+		height: 32vh;
 	}
 
 }
